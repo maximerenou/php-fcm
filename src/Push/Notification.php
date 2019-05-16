@@ -119,6 +119,8 @@ class Notification implements Request
         $request['notification']['title'] = $this->title;
         $request['notification']['body'] = $this->body;
         $request['notification']['sound'] = $this->sound;
+        $request['notification']['custom_notification']['sound'] = $this->sound;
+        $request['sound'] = $this->sound;
 
         return $request;
     }
