@@ -1,14 +1,18 @@
 {
-    "name": "edwinhoksberg/php-fcm",
+    "name": "maximerenou/php-fcm",
     "description": "A library for sending Firebase cloud messages and managing user topic subscriptions, device groups and devices.",
     "keywords": ["firebase cloud messaging", "fcm", "notifications", "firebase", "google"],
     "type": "library",
     "license": "MIT",
-    "homepage": "https://github.com/EdwinHoksberg/php-fcm",
+    "homepage": "https://github.com/maximerenou/php-fcm",
     "authors": [
         {
             "name": "Edwin Hoksberg",
             "email": "mail@edwinhoksberg.nl"
+        },
+        {
+            "name": "Maxime Renou",
+            "email": "contact@maximerenou.com"
         }
     ],
     "autoload": {
