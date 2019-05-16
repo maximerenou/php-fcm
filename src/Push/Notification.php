@@ -20,14 +20,21 @@ class Notification implements Request
     private $body;
 
     /**
+     * @var string
+     */
+    private $sound;
+
+    /**
      * @param string $title
      * @param string $body
      * @param string $recipient
+     * @param string $sound
      */
-    public function __construct(string $title = '', string $body = '', string $recipient = '')
+    public function __construct(string $title = '', string $body = '', string $recipient = '', string $sound = 'default')
     {
         $this->title = $title;
         $this->body = $body;
+        $this->sound = $sound;
 
         if (!empty($recipient)) {
             $this->addRecipient($recipient);
@@ -54,6 +61,18 @@ class Notification implements Request
     public function setBody(string $body): self
     {
         $this->body = $body;
+
+        return $this;
+    }
+    
+    /**
+     * @param string $sound
+     *
+     * @return $this
+     */
+    public function setSound(string $sound): self
+    {
+        $this->sound = $sound;
 
         return $this;
     }
@@ -99,6 +118,7 @@ class Notification implements Request
 
         $request['notification']['title'] = $this->title;
         $request['notification']['body'] = $this->body;
+        $request['notification']['sound'] = $this->sound;
 
         return $request;
     }
